@@ -69,7 +69,7 @@ data:
       - 13.234.15.110-13.234.15.112
 ```
 
-**NOTE** - You can change the IP pool according to your Network
+> NOTE - You can change the IP pool according to your Network
 
 1. Apply the MetalLB configmap from the metallb-config.yaml file:
 ```
@@ -101,3 +101,4 @@ NAME                                 TYPE           CLUSTER-IP      EXTERNAL-IP 
 ingress-nginx-controller             LoadBalancer   10.99.7.67      13.234.15.110    80:31884/TCP,443:30234/TCP   1m
 ingress-nginx-controller-admission   ClusterIP      10.100.125.29   <none>        443/TCP                      1m
 ```
+> Now if you look at the status on the EXTERNAL-IP it is 192.168.2.2 and can be access directly from external, without using NodePort or ClusterIp
