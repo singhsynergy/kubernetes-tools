@@ -95,10 +95,12 @@ Apply the Ingress manifest from the ingress.yaml file
 ```
 kubectl apply -f ingress/ingress.yaml -n ingress-nginx
 ```
+
 Query the state of deploy:
 ```
 kubectl get svc -n ingress-nginx
 ```
+
 The response should look similar to this:
 ```
 NAME                                 TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                      AGE
