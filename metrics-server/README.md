@@ -1,6 +1,5 @@
 # How to Install Kubernetes (K8s) Metrics Server Step by Step on ubuntu
 
-## Deploy_Metrics_server
 
 Clone the repo and Goto Metrics_server folder with the below command:
 ```
