@@ -1,7 +1,7 @@
 # kubernetes-tools
 
 - [MetalLB](#MetalLB)
-- [Ingress](#Ingress)
+- [Ingress](#Deploy_Ingress)
 ## Deploy MetalLB
 To install MetalLB, apply the manifest:
 1. Create MetalLB namespace with command
@@ -88,7 +88,7 @@ NAME         READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES         
 controller   1/1     1            1           22s   controller   quay.io/metallb/controller:v0.12.1   app=metallb,component=controller
 ```
 
-## Deploy Ingress
+## Deploy_Ingress
 Apply the Ingress manifest from the ingress.yaml file
 ```
 kubectl apply -f ingress/ingress.yaml -n ingress-nginx
