@@ -1,6 +1,5 @@
 # kubernetes-tools
-[MetalLB](## Deploy MetalLB)
-
+ [MetalLB](#Deploy MetalLB)
 ## Deploy MetalLB
 To install MetalLB, apply the manifest:
 1. Create MetalLB namespace with command
