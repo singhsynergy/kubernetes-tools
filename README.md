@@ -4,6 +4,7 @@
 - [Ingress](#Deploy_Ingress)
 - [Metrics_server](#Deploy_Metrics_server)
    
+
 ## Deploy_MetalLB
 To install MetalLB, apply the manifest:
 1. Create MetalLB namespace with command
@@ -90,6 +91,7 @@ NAME         READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES         
 controller   1/1     1            1           22s   controller   quay.io/metallb/controller:v0.12.1   app=metallb,component=controller
 ```
 
+
 ## Deploy_Ingress
 Apply the Ingress manifest from the ingress.yaml file
 ```
@@ -106,6 +108,7 @@ ingress-nginx-controller             LoadBalancer   10.99.7.67      13.234.15.11
 ingress-nginx-controller-admission   ClusterIP      10.100.125.29   <none>        443/TCP                      1m
 ```
 > Now if you look at the status on the EXTERNAL-IP it is 192.168.2.2 and can be access directly from external, without using NodePort or ClusterIp
+
 
 ## Deploy_Metrics_server
 Apply the Metrics_server manifest from the components.yaml file
