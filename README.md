@@ -2,9 +2,7 @@
 
 - [MetalLB](#Deploy_MetalLB)
 - [Ingress](#Deploy_Ingress)
-- [Metrics_server](#Deploy_Metrics_server)
    
-
 ## Deploy_MetalLB
 To install MetalLB, apply the manifest:
 1. Create MetalLB namespace with command
