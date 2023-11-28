@@ -2,7 +2,7 @@
 
 - [MetalLB](#Deploy_MetalLB)
 - [Ingress](#Deploy_Ingress)
-   
+- [Metrics Server](https://github.com/jassi-devops/kubernetes-tools/blob/main/metrics-server/README.md)
 ## Deploy_MetalLB
 To install MetalLB, apply the manifest:
 1. Create MetalLB namespace with command
