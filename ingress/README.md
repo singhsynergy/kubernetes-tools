@@ -5,7 +5,7 @@
 Setup MetalLB if you are not going to use any third party LoadBalancer service
 - [Setup MetalLB](https://github.com/jassi-devops/kubernetes-tools/tree/main/metalLB)
 
-
+## Setup Ingress
 Clone the repo and Goto ingress folder with the below command:
 ```
 git clone git@github.com:jassi-devops/kubernetes-tools.git
