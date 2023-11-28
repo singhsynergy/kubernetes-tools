@@ -1,4 +1,5 @@
-# tomcat-metalLB-ingress-kubernetes
+# kubernetes-tools
+[MetalLB]
 
 ## Deploy MetalLB
 To install MetalLB, apply the manifest:
