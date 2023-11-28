@@ -108,36 +108,3 @@ ingress-nginx-controller             LoadBalancer   10.99.7.67      13.234.15.11
 ingress-nginx-controller-admission   ClusterIP      10.100.125.29   <none>        443/TCP                      1m
 ```
 > Now if you look at the status on the EXTERNAL-IP it is 192.168.2.2 and can be access directly from external, without using NodePort or ClusterIp
-
-
-## Deploy_Metrics_server
-Apply the Metrics_server manifest from the components.yaml file
-```
-kubectl apply -f metrics-server/components.yaml -n kube-system
-```
-Query the state of deploy:
-```
-kubectl get po -n kube-system | grep -i metrics
-```
-The response should look similar to this:
-```
-metrics-server-655d6d6565-xt8m5           1/1     Running   0             3m11s
-```
-Test Metrics Server Installation
-```
-kubectl top nodes
-```
-This command should display the resource utilization for each node in your cluster, including CPU and memory usage.
-The response should look similar to this:
-```
-NAME      CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%
-master    230m         5%     3049Mi          38%
-worker1   407m         5%     12642Mi         79%
-worker2   131m         1%     5817Mi          36%
-worker3   157m         1%     5638Mi          35%
-```
-To view pods resource utilization of your current namespace or specific namespace, run
-```
-kubectl top pod
-kubectl top pod -n kube-system
-```
