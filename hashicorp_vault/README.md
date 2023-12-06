@@ -89,7 +89,7 @@ kubectl exec --stdin=true --tty=true vault-0 -n vault -- vault operator unseal o
 The response should look similar to this:
 ```
 Key                Value
-                
+---                -----                
 Seal Type          shamir
 Initialized        true
 Sealed             true
@@ -109,7 +109,7 @@ kubectl exec --stdin=true --tty=true vault-0 -n vault -- vault operator unseal K
 The response should look similar to this:
 ```
 Key             Value
-             
+---             -----             
 Seal Type       shamir
 Initialized     true
 Sealed          false
@@ -129,7 +129,7 @@ kubectl exec --stdin=true --tty=true vault-0 -n vault -- vault operator unseal V
 The response should look similar to this:
 ```
 Key             Value
-             
+---             -----             
 Seal Type       shamir
 Initialized     true
 Sealed          false
@@ -149,7 +149,7 @@ kubectl exec --stdin=true --tty=true vault-0 -n vault -- vault operator unseal i
 The response should look similar to this:
 ```
 Key             Value
-             
+---             -----               
 Seal Type       shamir
 Initialized     true
 Sealed          false
