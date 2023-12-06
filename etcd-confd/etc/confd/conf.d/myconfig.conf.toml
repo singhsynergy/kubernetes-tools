@@ -1,10 +1,9 @@
 [template]
-src = "abc.tmpl"
-dest = "/root/abc"
+src = "myconfig.conf.tmpl"
+dest = "/root/myconfig.conf"
 prefix = "/kv/data"
 keys = [
-    "database",
-    "test"
+    "database"
 ]
 owner = "jenkins"
 mode = "0644"
