@@ -63,7 +63,7 @@ existing unseal keys shares. See "vault operator rekey" for more information.
 Following that, we'll proceed to unseal the vault.
 ```
 kubectl exec --stdin=true --tty=true vault-0 -n vault -- vault operator unseal A2CnXAlnFigN0GPNsTiwSR4RucJ8vt0Q8FIxUYUzsCl0
-```
+`
 Key                Value
                 
 Seal Type          shamir
@@ -77,7 +77,7 @@ Version            1.14.0
 Build Date         2023-06-19T11:40:23Z
 Storage Type       file
 HA Enabled         false
-```
+`
 kubectl exec --stdin=true --tty=true vault-0 -n vault -- vault operator unseal oJrSB+1Vr4HA09H2tK4ysP76kzqDFEsjYvOurVhVBa3V
 ```
 Key                Value
