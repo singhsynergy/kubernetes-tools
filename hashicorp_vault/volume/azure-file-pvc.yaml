@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: vault-test-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: vault-test-azurefile
+  resources:
+    requests:
+      storage: 10Gi

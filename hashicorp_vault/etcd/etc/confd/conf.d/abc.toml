@@ -1,0 +1,11 @@
+[template]
+src = "abc.tmpl"
+dest = "/root/abc"
+prefix = "/kv/data"
+keys = [
+    "database",
+    "test"
+]
+owner = "jenkins"
+mode = "0644"
+
