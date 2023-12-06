@@ -1,7 +1,7 @@
 # How to deploy hashicorp vault on a kubernetes cluster
 
 ## Prerequisites
-- [Installing Helm](Install helm)
+- [Installing Helm](#Install)
 Setting up Vault
 Installing Vault in K8S
 Post Install Configuration of Vault
