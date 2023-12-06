@@ -1,17 +1,7 @@
 # How to deploy hashicorp vault on a kubernetes cluster
 
-## Prerequisites
-- [Installing Helm](#Installing_Helm)
-- [Setting up Vault](#Setting_up_Vault)
-- [Installing Vault in K8S](#Installing_Vault_in_K8S)
-
-Post Install Configuration of Vault
-Creating a secret in vault
-
-
-### Installing_Helm
-
-First we need to install helm, the setup is covered in Installing [Helm](https://helm.sh/docs/intro/install/#from-apt-debianubuntu) :
+## Installing Helm
+Initially, the installation of Helm is required, and the process for this is detailed in the "Installing [Helm](https://helm.sh/docs/intro/install/#from-apt-debianubuntu)" section:
 ```
 curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
 sudo apt-get install apt-transport-https --yes
@@ -20,26 +10,35 @@ sudo apt-get update
 sudo apt-get install helm
 ```
 
-### Setting_up_Vault
-There are a bunch of steps, so let’s break them down into sections:
+## Setting up Vault in K8S
 
-#### Installing_Vault_in_K8S
-Most instructions are available at Vault on Kubernetes Deployment Guide. First we need to add the helm repo:
+The majority of instructions can be found in the Vault on Kubernetes Deployment [Guide](https://developer.hashicorp.com/vault/tutorials/kubernetes/kubernetes-raft-deployment-guide). To begin, the first step is to include the Helm repository.
 
-> helm repo add hashicorp https://helm.releases.hashicorp.com
+Add the helm repository for hashicorp vault
+```
+helm repo add hashicorp https://helm.releases.hashicorp.com
+```
+The response should look similar to this:
+```
 "hashicorp" has been added to your repositories
-Then we can check out the latest version of package:
-
-> helm search repo hashicorp/vault
+```
+Checkout the latest version of package:
+```
+helm search repo hashicorp/vault
+```
+The response should look similar to this:
+```
 NAME               CHART VERSION   APP VERSION     DESCRIPTION
 hashicorp/vault    0.27.0          1.15.2          Official HashiCorp Vault Chart
+```
 
+## Configuration steps after installing Vault
 
-Post Install Configuration of Vault
-Now let’s initialze the vault:
-
-kubectl exec --stdin=true --tty=true vault-0 -n vault-singlenode -- vault operator init
-
+Next, let's proceed with initializing the vault.
+```
+kubectl exec --stdin=true --tty=true vault-0 -n vault -- vault operator init
+```
+The response should look similar to this:
 ```
 Unseal Key 1: A2CnXAlnFigN0GPNsTiwSR4RucJ8vt0Q8FIxUYUzsCl0
 Unseal Key 2: oJrSB+1Vr4HA09H2tK4ysP76kzqDFEsjYvOurVhVBa3V
@@ -61,8 +60,8 @@ It is possible to generate new unseal keys, provided you have a quorum of
 existing unseal keys shares. See "vault operator rekey" for more information.
 ```
 
-Next we need to unseal the vault:
-
+Following that, we'll proceed to unseal the vault.
+```
 kubectl exec --stdin=true --tty=true vault-0 -n vault -- vault operator unseal A2CnXAlnFigN0GPNsTiwSR4RucJ8vt0Q8FIxUYUzsCl0
 ```
 Key                Value
@@ -146,9 +145,9 @@ Cluster ID      93432061-6e10-6f95-51d0-d2c7b0942f2b
 HA Enabled      false
 ```
 
-After that all the pods should be in a READY state:
+Query the state of deploy and the pod should be in a READY state:
 ```
-kubectl get pod -n vault-singlenode
+kubectl get pod -n vault
 ```
 output
 ```
