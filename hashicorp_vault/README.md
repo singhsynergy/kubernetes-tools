@@ -63,7 +63,8 @@ existing unseal keys shares. See "vault operator rekey" for more information.
 Following that, we'll proceed to unseal the vault.
 ```
 kubectl exec --stdin=true --tty=true vault-0 -n vault -- vault operator unseal A2CnXAlnFigN0GPNsTiwSR4RucJ8vt0Q8FIxUYUzsCl0
-`
+```
+```
 Key                Value
                 
 Seal Type          shamir
@@ -77,8 +78,10 @@ Version            1.14.0
 Build Date         2023-06-19T11:40:23Z
 Storage Type       file
 HA Enabled         false
-`
+```
+```
 kubectl exec --stdin=true --tty=true vault-0 -n vault -- vault operator unseal oJrSB+1Vr4HA09H2tK4ysP76kzqDFEsjYvOurVhVBa3V
+```
 ```
 Key                Value
                 
@@ -93,6 +96,7 @@ Version            1.14.0
 Build Date         2023-06-19T11:40:23Z
 Storage Type       file
 HA Enabled         false
+```
 ```
 kubectl exec --stdin=true --tty=true vault-0 -n vault -- vault operator unseal KSwubdHLgJ6prqEqKuvW/Zv8UaUQsDhXbZbNZ14/5EAQ
 ```
@@ -110,8 +114,9 @@ Cluster Name    vault-cluster-3104ea48
 Cluster ID      93432061-6e10-6f95-51d0-d2c7b0942f2b
 HA Enabled      false
 ```
-
+```
 kubectl exec --stdin=true --tty=true vault-0 -n vault -- vault operator unseal VM5ihi1YP1g47F1VXZN+aTG1cYHgEtA9wgOrNQU2sNKo
+```
 ```
 Key             Value
              
@@ -127,8 +132,9 @@ Cluster Name    vault-cluster-3104ea48
 Cluster ID      93432061-6e10-6f95-51d0-d2c7b0942f2b
 HA Enabled      false
 ```
-
+```
 kubectl exec --stdin=true --tty=true vault-0 -n vault -- vault operator unseal ie6wAguaNQQzLXmLhpLsq6bUXZITPi0X1VKMr1WgKZqP
+```
 ```
 Key             Value
              
