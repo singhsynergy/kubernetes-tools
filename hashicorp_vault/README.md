@@ -210,3 +210,37 @@ The response should look similar to this:
 ```
 NAME                READY   STATUS    RESTARTS   AGE
 vault-0             1/1     Running   0          5m
+```
+## Configuring the Vault service with a domain
+
+### Create the TLS secret
+Ensure that the domain certificates are available on your server prior to executing the command below.
+```
+kubectl create secret tls vault-ssl --key private.key --cert cert.pem -n vault
+```
+Query the state of secret:
+```
+kubectl get secret  -n vault
+```
+The response should look similar to this:
+```
+NAME              TYPE                DATA   AGE
+vault-ssl         kubernetes.io/tls   2      2m
+```
+Since we're relying on Ingress for domain connectivity, it's important to modify the ingress file to align the domain with your specific domain for a secure connection before executing the command below.
+> NOTE: Ingress must be installed on your K8S cluster. If you're utilizing a Bare Metal K8S cluster, you can set up the Ingress with MetalLB using this [Guide](https://github.com/jassi-devops/kubernetes-tools/tree/main/ingress).
+
+```
+kubectl apply -f vault-ingress.yml -n vault
+```
+Query the state of ingress:
+```
+kubectl get ing -n vault
+```
+The response should look similar to this:
+```
+NAME            CLASS   HOSTS            ADDRESS        PORTS     AGE
+vault-ingress   nginx   example.com      x.x.x.x        80, 443   2m
+```
+
+<code style="color : Blue">You can now access the Vault Service by navigating to the domain https://example.com. It will prompt for the root token, which you can find in the step where the vault was initialized.</code>
