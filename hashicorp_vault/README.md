@@ -31,7 +31,46 @@ The response should look similar to this:
 NAME               CHART VERSION   APP VERSION     DESCRIPTION
 hashicorp/vault    0.27.0          1.15.2          Official HashiCorp Vault Chart
 ```
+Clone the repo and Goto hashicorp_vault folder with the below command:
+```
+git clone git@github.com:jassi-devops/kubernetes-tools.git
+cd kubernetes-tools/hashicorp_vault
+```
+Creating Storage Class and PVC to persist the data.
+Since we're utilizing Azure File Storage, the following commands are tailored for Azure to create the Storage Class and PVC. If you're using a different storage system, feel free to bypass this step and create the Storage Class and PVC according to your specific storage requirements.
 
+```
+kubectl apply -f hashicorp_vault/volume/azure-file-sc.yaml -n vault
+kubectl apply -f hashicorp_vault/volume/azure-file-pvc.yaml -n vault
+```
+Query the state of SC and PV:
+```
+kubectl get sc,pv -n vault | grep vault
+```
+The response should look similar to this:
+```
+storageclass.storage.k8s.io/vault-test-azurefile    file.csi.azure.com   Delete    Immediate    true       10m
+persistentvolume/pvc-355faa3a-9fcd-4f84-a5b9-6343914d8e86   10Gi   RWX   Delete    Bound        default/vault-test-pvc vault-test-azurefile    12m
+```
+Modify the template/server-statefulset.yaml file and include the storageClassName attribute on line number 159.
+```
+storageClassName: vault-test-azurefile
+```
+
+Apply the Valut template(clusterrolebinding, configmap, headless-service, service, serviceaccount, statefulset) with below command:
+```
+kubectl apply -f templates/. -n vault-singlenode
+```
+The response should look similar to this:
+```
+clusterrolebinding.rbac.authorization.k8s.io/vault-server-binding configured
+configmap/vault-config created
+service/vault-internal created
+service/vault created
+serviceaccount/vault created
+statefulset.apps/vault created
+pod/vault-server-test created
+```
 ## Configuration steps after installing Vault
 
 Next, let's proceed with initializing the vault.
@@ -163,11 +202,11 @@ Cluster ID      93432061-6e10-6f95-51d0-d2c7b0942f2b
 HA Enabled      false
 ```
 
-Query the state of deploy and the pod should be in a READY state:
+Query the state of pod and it should be in a READY state:
 ```
 kubectl get pod -n vault
 ```
-output
+The response should look similar to this:
 ```
 NAME                READY   STATUS    RESTARTS   AGE
 vault-0             1/1     Running   0          5m
