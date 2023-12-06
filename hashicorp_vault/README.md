@@ -243,4 +243,4 @@ NAME            CLASS   HOSTS            ADDRESS        PORTS     AGE
 vault-ingress   nginx   example.com      x.x.x.x        80, 443   2m
 ```
 
-<code style="color : Blue">You can now access the Vault Service by navigating to the domain https://example.com. It will prompt for the root token, which you can find in the step where the vault was initialized.</code>
+You can now access the Vault Service by navigating to the domain https://example.com. It will prompt for the root token, which you can find in the step where the vault was initialized.
