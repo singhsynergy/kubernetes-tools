@@ -2,13 +2,14 @@
 
 ## Prerequisites
 - [Installing Helm](#Install)
-Setting up Vault
-Installing Vault in K8S
+- [Setting up Vault](#Setting)
+- [Installing Vault in K8S](#Installing)
+
 Post Install Configuration of Vault
 Creating a secret in vault
 
 
-## Install helm
+### Install helm
 
 First we need to install helm, the setup is covered in Installing Helm(https://helm.sh/docs/intro/install/#from-apt-debianubuntu):
 ```
@@ -19,10 +20,10 @@ sudo apt-get update
 sudo apt-get install helm
 ```
 
-Setting up Vault
+### Setting up Vault
 There are a bunch of steps, so let’s break them down into sections:
 
-Installing Vault in K8S
+#### Installing Vault in K8S
 Most instructions are available at Vault on Kubernetes Deployment Guide. First we need to add the helm repo:
 
 > helm repo add hashicorp https://helm.releases.hashicorp.com
