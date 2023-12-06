@@ -244,4 +244,5 @@ vault-ingress   nginx   example.com      x.x.x.x        80, 443   2m
 ```
 
 You can now access the Vault Service by navigating to the domain https://example.com. It will prompt for the root token, which you can find in the step where the vault was initialized.
+$${\color{BLUE}You \space can \space now \space access \space the \space Vault \space Service \space by \space navigating \space to \space the \space domain \space https://example.com. \space It \space will \space prompt \space for \space the \space root \space token, \space which \space you \space can \space find \space in \space the \space step \space where \space the \space vault \space was \space initialized.}$$
 $${\color{BLUE}You \space can.}$$
