@@ -60,13 +60,16 @@ It is possible to generate new unseal keys, provided you have a quorum of
 existing unseal keys shares. See "vault operator rekey" for more information.
 ```
 
-Following that, we'll proceed to unseal the vault.
+Following that, we'll proceed to unseal the vault with the Unseal Key 1-5.
+Unseal the vault with the Unseal Key 1
 ```
 kubectl exec --stdin=true --tty=true vault-0 -n vault -- vault operator unseal A2CnXAlnFigN0GPNsTiwSR4RucJ8vt0Q8FIxUYUzsCl0
 ```
+The response should look similar to this:
+
 ```
 Key                Value
-                
+---                -----
 Seal Type          shamir
 Initialized        true
 Sealed             true
@@ -79,9 +82,11 @@ Build Date         2023-06-19T11:40:23Z
 Storage Type       file
 HA Enabled         false
 ```
+Unseal the vault with the Unseal Key 2
 ```
 kubectl exec --stdin=true --tty=true vault-0 -n vault -- vault operator unseal oJrSB+1Vr4HA09H2tK4ysP76kzqDFEsjYvOurVhVBa3V
 ```
+The response should look similar to this:
 ```
 Key                Value
                 
@@ -97,9 +102,12 @@ Build Date         2023-06-19T11:40:23Z
 Storage Type       file
 HA Enabled         false
 ```
+Unseal the vault with the Unseal Key 3
 ```
 kubectl exec --stdin=true --tty=true vault-0 -n vault -- vault operator unseal KSwubdHLgJ6prqEqKuvW/Zv8UaUQsDhXbZbNZ14/5EAQ
 ```
+The response should look similar to this:
+```
 Key             Value
              
 Seal Type       shamir
@@ -114,9 +122,11 @@ Cluster Name    vault-cluster-3104ea48
 Cluster ID      93432061-6e10-6f95-51d0-d2c7b0942f2b
 HA Enabled      false
 ```
+Unseal the vault with the Unseal Key 4
 ```
 kubectl exec --stdin=true --tty=true vault-0 -n vault -- vault operator unseal VM5ihi1YP1g47F1VXZN+aTG1cYHgEtA9wgOrNQU2sNKo
 ```
+The response should look similar to this:
 ```
 Key             Value
              
@@ -132,9 +142,11 @@ Cluster Name    vault-cluster-3104ea48
 Cluster ID      93432061-6e10-6f95-51d0-d2c7b0942f2b
 HA Enabled      false
 ```
+Unseal the vault with the Unseal Key 5
 ```
 kubectl exec --stdin=true --tty=true vault-0 -n vault -- vault operator unseal ie6wAguaNQQzLXmLhpLsq6bUXZITPi0X1VKMr1WgKZqP
 ```
+The response should look similar to this:
 ```
 Key             Value
              
