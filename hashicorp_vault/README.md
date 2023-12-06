@@ -1,15 +1,15 @@
 # How to deploy hashicorp vault on a kubernetes cluster
 
 ## Prerequisites
-- [Installing Helm](#Install)
-- [Setting up Vault](#Setting)
-- [Installing Vault in K8S](#Installing)
+- [Installing Helm](#Installing_Helm)
+- [Setting up Vault](#Setting_up_Vault)
+- [Installing Vault in K8S](#Installing_Vault_in_K8S)
 
 Post Install Configuration of Vault
 Creating a secret in vault
 
 
-### Install helm
+### Installing_Helm
 
 First we need to install helm, the setup is covered in Installing Helm(https://helm.sh/docs/intro/install/#from-apt-debianubuntu):
 ```
@@ -20,10 +20,10 @@ sudo apt-get update
 sudo apt-get install helm
 ```
 
-### Setting up Vault
+### Setting_up_Vault
 There are a bunch of steps, so let’s break them down into sections:
 
-#### Installing Vault in K8S
+#### Installing_Vault_in_K8S
 Most instructions are available at Vault on Kubernetes Deployment Guide. First we need to add the helm repo:
 
 > helm repo add hashicorp https://helm.releases.hashicorp.com
