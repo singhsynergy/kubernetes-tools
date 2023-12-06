@@ -43,12 +43,17 @@ mode = "0644"
 [myconfig]
 url = {{ getv "/database/data/url" }}
 ```
+
+## Install Confd
+
+You can install confd by referring to the [official guide](https://github.com/kelseyhightower/confd/blob/master/docs/installation.md), which corresponds to your specific operating system.
+
 ## Vault initialization
 
 Initiating vault command to replace the Key-Value
 
 ```
-/usr/local/bin/confd -confdir /etc/confd -onetime -backend vault -node https://example.com -client-ca-keys ca_cert.pem -client-cert cert.pem  -client-key key.pem -auth-type token -auth-token <Root_Token>
+confd -confdir /etc/confd -onetime -backend vault -node https://example.com -client-ca-keys ca_cert.pem -client-cert cert.pem  -client-key key.pem -auth-type token -auth-token <Root_Token>
 ```
 Note: Substitute the domain, certificate files, and Token based on your specific environment.
 
