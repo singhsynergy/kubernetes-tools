@@ -65,8 +65,11 @@ The response should look similar to this:
 2023-12-06T05:15:41Z jenkins-vm /usr/local/bin/confd[1781543]: INFO Target config /root/myconfig.conf has been updated
 The dest configuration file should now be in sync.
 ```
-Check the content of the file after replacement of key-value
+Check the content of the file after replacement of key-value.
+```
 cat /root/myconfig.conf
+```
+The response should look similar to this:
 ```
 [myconfig]
 url = mysql.com
