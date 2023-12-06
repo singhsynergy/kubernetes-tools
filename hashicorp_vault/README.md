@@ -11,7 +11,7 @@ Creating a secret in vault
 
 ### Installing_Helm
 
-First we need to install helm, the setup is covered in Installing Helm(https://helm.sh/docs/intro/install/#from-apt-debianubuntu):
+First we need to install helm, the setup is covered in Installing [Helm](https://helm.sh/docs/intro/install/#from-apt-debianubuntu) :
 ```
 curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
 sudo apt-get install apt-transport-https --yes
