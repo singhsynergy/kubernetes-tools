@@ -33,7 +33,7 @@ hashicorp/vault    0.27.0          1.15.2          Official HashiCorp Vault Char
 ```
 Clone the repo and Goto hashicorp_vault folder with the below command:
 ```
-git clone git@github.com:jassi-devops/kubernetes-tools.git
+git clone https://github.com/jassi-devops/kubernetes-tools.git
 cd kubernetes-tools/hashicorp_vault
 ```
 Creating Storage Class and PVC to persist the data.
