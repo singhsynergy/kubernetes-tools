@@ -3,7 +3,7 @@
 
 Clone the repo and Goto Metrics_server folder with the below command:
 ```
-git clone https://github.com/jassi-devops/kubernetes-tools.git
+git clone https://github.com/singhsynergy/kubernetes-tools.git
 cd kubernetes-tools/metrics-server
 ```
 Apply the Metrics_server manifest from the components.yaml file
