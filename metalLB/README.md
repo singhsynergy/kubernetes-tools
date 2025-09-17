@@ -15,8 +15,12 @@ The response should look similar to this:
 ```
 namespace/metallb-system created
 ```
+2.
 
-2. Apply the MetalLB manifest controller and speaker from the metallb.yaml file:
+```
+kubectl get configmap kube-proxy -n kube-system -o yaml | sed -e "s/strictARP: false/strictARP: true/" | kubectl apply -f - -n kube-system
+```
+3.. Apply the MetalLB manifest controller and speaker from the metallb.yaml file:
 ```
 kubectl apply -f metallb.yaml -n metallb-system
 ```
