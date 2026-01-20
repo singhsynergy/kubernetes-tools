@@ -64,18 +64,23 @@ The installation manifest does not include a configuration file. MetalLB’s com
 ### Configure
 Based on the planed network configuration, we will have a **metallb-config.yaml** as below:
 ```
-apiVersion: v1
-kind: ConfigMap
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
 metadata:
+  name: default-pool
   namespace: metallb-system
-  name: config
-data:
-  config: |
-    address-pools:
-    - name: default
-      protocol: layer2
-      addresses:
-      - 13.234.15.110-13.234.15.112
+spec:
+  addresses:
+  - 192.168.80.90-192.168.80.90
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: default
+  namespace: metallb-system
+spec:
+  ipAddressPools:
+  - default-pool
 ```
 
 > NOTE - You can change the IP pool according to your Network
