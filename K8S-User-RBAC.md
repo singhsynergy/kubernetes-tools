@@ -115,7 +115,7 @@ CA_CERT=$(kubectl config view --minify -o jsonpath='{.clusters[0].cluster.certif
 kubectl config --kubeconfig=${USER_NAME}-kubeconfig \
   set-cluster ${CLUSTER_NAME} \
   --server=${SERVER} \
-  --certificate-authority-data=/etc/kubernetes/pki/ca.crt \
+  --certificate-authority=/etc/kubernetes/pki/ca.crt \
   --embed-certs=true
 
 kubectl config --kubeconfig=${USER_NAME}-kubeconfig \
