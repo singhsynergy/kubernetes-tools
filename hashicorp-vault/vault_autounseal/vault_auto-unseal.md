@@ -1,7 +1,4 @@
 
----
-
-````md
 # Vault Auto-Unseal Using systemd
 
 This guide configures **HashiCorp Vault** to automatically unseal itself after the Vault service starts, using a `systemd` `ExecStartPost` hook.
