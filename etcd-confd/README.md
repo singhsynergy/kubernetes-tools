@@ -1,7 +1,7 @@
 # Setup etcd confd with Hashicorp Vault kv2: Quick and Easy
 
 ## prerequisites
-- [Hashicorp Vault](https://github.com/jassi-devops/kubernetes-tools/tree/main/hashicorp_vault)
+- [Hashicorp Vault](https://github.com/singhsynergy/Devops-tools/tree/main/hashicorp-vault/hashicorp-vault-on-k8s)
 
 ## create and enable new secret engine with kv version2
 ```
