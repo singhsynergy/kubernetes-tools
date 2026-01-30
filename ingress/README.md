@@ -3,12 +3,12 @@
 ## prerequisite
 
 Setup MetalLB if you are not going to use any third party LoadBalancer service
-- [Setup MetalLB](https://github.com/jassi-devops/kubernetes-tools/tree/main/metalLB)
+- [Setup MetalLB](https://github.com/singhsynergy/Devops-tools/tree/main/metalLB)
 
 ## Setup Ingress
 Clone the repo and Goto ingress folder with the below command:
 ```
-git clone https://github.com/singhsynergy/kubernetes-tools.git
+git clone https://github.com/singhsynergy/Devops-tools.git
 cd kubernetes-tools/ingress
 ```
 Apply the Ingress manifest from the ingress.yaml file
