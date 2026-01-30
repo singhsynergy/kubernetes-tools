@@ -2,7 +2,7 @@
 
 Clone the repo and Goto Metrics_server folder with the below command:
 ```
-git clone https://github.com/singhsynergy/kubernetes-tools.git
+git clone https://github.com/singhsynergy/Devops-tools.git
 cd kubernetes-tools/metalLB
 ```
 
