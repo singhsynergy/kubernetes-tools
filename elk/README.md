@@ -14,7 +14,7 @@ sudo apt-get install helm
 ## Clonning Repo for ELK Setup
 Clone the repo and Goto elk folder with the below command:
 ```
-git clone https://github.com/jassi-devops/kubernetes-tools.git
+git clone https://github.com/singhsynergy/Devops-tools.git
 cd kubernetes-tools/elk
 ```
 ## Setting up StorageAcoount
