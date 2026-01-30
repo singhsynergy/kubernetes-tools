@@ -34,9 +34,9 @@ sudo apt update -y
 sudo apt install -y openjdk-11-jdk wget
 
 cd /opt
-wget https://archive.apache.org/dist/kafka/3.6.0/kafka-3.6.0-src.tgz
-tar -xvf kafka-3.6.0-src.tgz
-mv kafka-3.6.0-src kafka
+wget https://archive.apache.org/dist/kafka/3.6.0/kafka_2.13-3.6.0.tgz
+tar -xvf kafka_2.13-3.6.0.tgz
+mv kafka_2.13-3.6.0 kafka
 ````
 
 ---
