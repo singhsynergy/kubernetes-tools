@@ -12,6 +12,13 @@ This guide configures **HashiCorp Vault** to automatically unseal itself after t
 >
 > Proceed only if you understand the risk.
 
+## IMPORTANT NOTE
+
+> 📝 **Change the following values as per your environment:**
+> - `VAULT_ADDR`
+> - `vault operator unseal` keys  
+>
+> Do **not** use the example values directly in your setup.
 ---
 
 ## STEP 1: Create the Vault Unseal Script
